@@ -1,0 +1,205 @@
+/* General classes */
+:root {
+    font-size: 16px;
+}
+
+html{
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a{
+    color: #02172E;
+}
+
+a:hover{
+    color:#10BBC5;
+}
+
+.body{
+    font-family: 'Muli', sans-serif;
+    line-height: 1.7rem;
+    color: #02172E;
+    text-align:center;
+    font-size: 1.1rem;
+    overflow-x: hidden;
+}
+
+.container{
+    margin: 4rem auto;
+    width:70%;
+    text-align:center;
+    font-size:1.1rem;
+    display: inline-block;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.section-heading{
+    font-family: 'Nunito', sans-serif;
+    font-size:1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.subsection-heading{
+    font-family: 'Nunito', sans-serif;
+    font-size:1.2rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #979797;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    display: block;
+    flex-basis:97%;
+}
+
+/* Content classes */
+.navigation{
+    float:right;
+    padding: 1.2rem 3rem 0 0;
+    font-size: 0.9rem;
+}
+
+.navigation-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#FDFAFA;
+    vertical-align: text-bottom;
+}
+
+.navigation-link-dark{
+    color: #02172E;
+}
+
+.landing{
+    background-image:
+            linear-gradient(rgba(3, 40, 69, 0.88), rgba(1, 6, 13, 0.88)),
+            url('../images/meetupAtSC5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-size:1.5rem;
+    align-content: center;
+    color:#FDFAFA;
+}
+
+
+.landing-container{
+    margin:auto;
+    padding-top:35vh;
+    width:50%;
+}
+
+.landing-header{
+    font-family: 'Nunito', sans-serif;
+    font-size: calc(36px + (44.8 - 36)*(100vw - 500px)/(1400 - 500));
+    text-transform: uppercase;
+}
+
+.landing-ingress{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+
+.landing-link{
+    font-family: 'Nunito', sans-serif;
+    border: 0.2rem solid #7FF5FC;
+    padding: 0.6rem;
+    color: #7FF5FC;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin:3rem auto;
+    width: 10rem;
+    font-size:1rem;
+}
+
+.text-content{
+    margin-bottom: 3rem;
+}
+
+.event, .some {
+    width: 45%;
+    min-width: 15rem;
+    margin-bottom: 2.5rem;
+}
+
+.event-title{
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.some img{
+    width:23%;
+    padding-right:5%;
+}
+
+.presentation {
+    width: 20rem;
+    margin: 0 auto 2rem auto;
+}
+
+.presentation:nth-child(n+4) { /*show heading + 2 presentations */
+    display: none;
+}
+
+.presentation-toggle {
+    text-decoration: underline;
+    color: #02172E;
+    font-size: 0.8rem;
+    display:inline-block;
+}
+
+.technologies{
+    background-image: linear-gradient( #072E4D, #02162C);
+    align-content: center;
+    color:#FDFAFA;
+}
+
+.resource-box{
+    margin-bottom: 2rem;
+}
+
+@media(min-width: 1100px) {
+
+    .container {
+        width:60%;
+    }
+}
+
+@media(max-width: 500px) {
+
+    nav{
+        display:none;
+    }
+
+    .container, .landing-container{
+        width:90%;
+    }
+
+    .landing-container{
+        padding-top:20vh;
+    }
+
+    .some, .event{
+        min-width:10rem;
+        width: 95%;
+    }
+
+    .presentation:nth-child(n+5) {
+        display: none;
+    }
+
+}
+
