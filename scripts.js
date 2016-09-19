@@ -85,3 +85,64 @@ var hide = function(){
         $('.presentation:nth-child(n+4)').hide(); //heading + 3 presentations
     }
 }
+
+
+// SLACK INVITER:
+
+var settings = {
+    'execute_api_domain' : 'bd36x7kp31.execute-api.eu-west-1.amazonaws.com',
+    'submit_button_selector' : '#slack-invite-button',
+    'email_input_selector' : '#slack-invite-email',
+    'return_message_container_selector' : '#slack-invite-return-message'
+};
+
+function handle_success( message ) { handle( 'success', message ); }
+function handle_error( message ) { handle( 'error', message ); }
+
+function handle( message_type, message ) {
+    var $return_message_containers = $( settings.return_message_container_selector );
+
+    if ( $return_message_containers.length ) {
+        $return_message_containers.removeClass( 'success error' );
+        $return_message_containers.addClass( message_type );
+        $return_message_containers.text( message );
+    }
+    else {
+        alert( message_type + ': ' + message );
+    }
+};
+
+$( document ).ready( function() {
+    $( settings.submit_button_selector ).click( function() {
+        var email_value = $( settings.email_input_selector ).val()
+
+        if ( ! email_value ) {
+            return setTimeout( function() { handle_error( 'Missing email' ); }, 10 );
+        }
+
+        $.ajax({
+            type: "POST",
+            url: 'https://' + settings.execute_api_domain + '/production/invite',
+            contentType: "application/json",
+            dataType: 'json',
+            data: JSON.stringify( { email : email_value } ),
+            success: function( data ) {
+                try {
+                    data = JSON.parse( data );
+                    if ( data.ok ) {
+                        handle_success( 'Great success' );
+                    }
+                    else {
+                        handle_error( 'Error while calling API: ' + data.error );
+                    }
+                }
+                catch ( error ) {
+                    handle_error( 'Unknown when parsing API return: ' + error );
+                }
+            },
+            error: function( xhr, status, error ) {
+                handle_error( 'Unknown transport error: ' + status + ( error ? ' ' + error : '' ) );
+            }
+        });
+    } );
+} );
