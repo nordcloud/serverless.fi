@@ -129,7 +129,15 @@ a:hover{
     margin-bottom: 3rem;
 }
 
-.event, .some {
+#slack-invite-return-message.error {
+    color:red;
+}
+
+#slack-invite-return-message.success {
+    color:green;
+}
+
+.event, .some, .slack-invite {
     width: 45%;
     min-width: 15rem;
     margin-bottom: 2.5rem;
