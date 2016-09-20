@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Muli|Nunito" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="scripts.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Serverless.fi</title>
-    </head>
-    <body class="body">
-        <nav>
-            <ul>
-                <li class="navigation"><a class="navigation-link" href="#resources">Resources</a></li>
-                <li class="navigation"><a class="navigation-link" href="#technologies">Technologies</a></li>
-                <li class="navigation"><a class="navigation-link" href="#meetup">Meetup</a></li>
-            </ul>
-        </nav>
-        <section class="landing">
-            <div class="landing-container">
-                <h1 class="landing-header">Serverless.fi</h1>
-                <div class="landing-ingress">
-                    Community for developers interested in the serverless paradigm
-                </div>
-                <a class="landing-link" href="#meetup">Read more</a>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Serverless.fi</title>
+  </head>
+  <body class="body">
+    <nav>
+      <ul>
+        <li class="navigation"><a class="navigation-link" href="#resources">Resources</a></li>
+        <li class="navigation"><a class="navigation-link" href="#technologies">Technologies</a></li>
+        <li class="navigation"><a class="navigation-link" href="#meetup">Meetup</a></li>
+      </ul>
+    </nav>
+    <section class="landing">
+      <div class="landing-container">
+        <h1 class="landing-header">Serverless.fi</h1>
+        <div class="landing-ingress">
+          Community for developers interested in the serverless paradigm
+        </div>
+        <a class="landing-link" href="#meetup">Read more</a>
+      </div>
+    </section>
+    <section id="meetup" class="meetup">
+      <div class="container">
+        <div class="section-heading"><h2>Meetup</h2></div>
+        <div class="text-content">
+          Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
+          new digital services. By leveraging PaaS / SaaS, the developer does not need to take servers into
+          account and can focus his/her efforts on actual service logic. Serverless.fi organizes events for
+          exchanging experiences and spreading this knowledge.
+        </div>
+        <div class="flex-container">
+          <div class="event">
+            <div class="subsection-heading"><h3>Next event</h3></div>
+            <div id="next-event">
+              <span id="date"></span><span id="time"></span> <br/>
+              <a id="event-url" href="" ><span id="event-title" class="event-title"></span></a> <br/>
+              <span id="location"></span> <br/>
+              <span id="participants"></span>
             </div>
-        </section>
-        <section id="meetup" class="meetup">
-            <div class="container">
-                <div class="section-heading"><h2>Meetup</h2></div>
-                <div class="text-content">
-                    Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
-                    new digital services. By leveraging PaaS / SaaS, the developer does not need to take servers into
-                    account and can focus his/her efforts on actual service logic. Serverless.fi organizes events for
-                    exchanging experiences and spreading this knowledge.
-                </div>
-
-                <div class="flex-container">
-                    <div class="event">
-                        <div class="subsection-heading"><h3>Next event</h3></div>
-                        <div id="next-event">
-                            <span id="date"></span><span id="time"></span> <br/>
-                            <a id="event-url" href="" ><span id="event-title" class="event-title"></span></a> <br/>
-                            <span id="location"></span> <br/>
-                            <span id="participants"></span>
-                        </div>
-                    </div>
-                    <div class="some">
-                        <div class="subsection-heading"><h3>Find us in</h3></div>
-                        <a href=""><img src="images/meetup.jpeg"/></a>
-                        <a href=""><img src="images/twitter.svg"/></a>
-                        <a href=""><img src="images/slack.png"/></a>
-                    </div>
-                </div>
-                <div class="flex-container">
-                    <div class="subsection-heading"><h3>Join our Slack!</h3></div>
-                    <div class="slack-invite">
-                        <p>Your email for receiving the invite: <input id="slack-invite-email" type="text" size="30"/> <button id="slack-invite-button">Send the invite!</button></p>
-                        <p id="slack-invite-return-message"></p>
-                    </div>
-                </div>
-                <div class="flex-container">
-                    <div class="subsection-heading"><h3>Presentations</h3></div>
-                    <div class="presentation" ><iframe src="//www.slideshare.net/slideshow/embed_code/key/leoo80dC5N7tD5" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/secret/leoo80dC5N7tD5" title="HKIServerless meetup intro_15_6" target="_blank">HKIServerless meetup intro_15_6</a> <br/> </strong> from <strong><a href="//www.slideshare.net/mpuittinen" target="_blank">Mikael Puittinen</a></strong> </div></div>
-                    <div class="presentation"><iframe src="//www.slideshare.net/slideshow/embed_code/key/5xBJl0VL1uDE2a" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mpuittinen/helsinki-serverless-meetup-1562016-aws-services" title="Helsinki Serverless Meetup 15.6.2016 : AWS Services" target="_blank">Helsinki Serverless Meetup 15.6.2016 : AWS Services</a><br/> </strong> from <strong><a href="//www.slideshare.net/mpuittinen" target="_blank">Mikael Puittinen</a></strong> </div></div>
-                    <div class="presentation"><iframe src="//www.slideshare.net/slideshow/embed_code/key/sGQzh9DuZ5CceO" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/jerryjalava/serverless-with-firebase" title="Serverless with Firebase" target="_blank">Serverless with Firebase</a> <br/> </strong> from <strong><a href="//www.slideshare.net/jerryjalava" target="_blank">Jerry Jalava</a></strong> </div></div>
-                    <div class="presentation"><iframe src="https://onedrive.live.com/embed?cid=AE10FA5F8F94DC52&resid=AE10FA5F8F94DC52%217818&authkey=AM3aBoefEcCKDnk&em=2" width="476" height="288" frameborder="0" scrolling="no"></iframe></div>
-                </div>
-                <a id="presentation-toggle" class="presentation-toggle" href="javascript:void(0)">View all presentations</a>
-            </div>
-        </section>
-        <section id="technologies" class="technologies">
-            <div class="container">
-                <div class="section-heading"><h2>Technologies</h2></div>
-                <div class="text-content">
-                    Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
-                    Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
-                    new digital services. By leveraging PaaS / SaaS, the developer does not need to take servers into
-                    account and can focus his/her efforts on actual service logic. Serverless.fi organizes events for
-                    exchanging experiences and spreading this knowledge.
-                </div>
-            </div>
-        </section>
-        <section id="resources" class="resources">
-            <div class="container">
-                <div class="section-heading"><h2>Resources</h2></div>
-                <div class="flex-container">
-                    <div class="resource-box">
-                        <div class="subsection-heading"><h3>Lorem material</h3></div>
-                        <a href="#">Link to some material</a> <br/>
-                        <a href="#">Link to some material</a>
-                    </div>
-                    <div class="resource-box">
-                        <div class="subsection-heading"><h3>Lirum material</h3></div>
-                        <a href="#">Link to some material</a> <br/>
-                        <a href="#">Link to some material</a>
-                    </div>
-                    <div class="resource-box">
-                        <div class="subsection-heading"><h3>Larum material</h3></div>
-                        <a href="#">Link to some material</a> <br/>
-                        <a href="#">Link to some material</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </body>
+          </div>
+          <div class="some">
+            <div class="subsection-heading"><h3>Find us in</h3></div>
+            <a href=""><img src="images/meetup.jpeg"/></a>
+            <a href=""><img src="images/twitter.svg"/></a>
+            <a href=""><img src="images/slack.png"/></a>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="subsection-heading"><h3>Join our Slack!</h3></div>
+          <div class="slack-invite">
+            <p>Your email for receiving the invite: <input id="slack-invite-email" type="email" size="30"/> <button id="slack-invite-button">Send the invite!</button></p>
+            <p id="slack-invite-return-message"></p>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="subsection-heading"><h3>Presentations</h3></div>
+          <div class="presentation" ><iframe src="//www.slideshare.net/slideshow/embed_code/key/leoo80dC5N7tD5" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/secret/leoo80dC5N7tD5" title="HKIServerless meetup intro_15_6" target="_blank">HKIServerless meetup intro_15_6</a> <br/> </strong> from <strong><a href="//www.slideshare.net/mpuittinen" target="_blank">Mikael Puittinen</a></strong> </div></div>
+          <div class="presentation"><iframe src="//www.slideshare.net/slideshow/embed_code/key/5xBJl0VL1uDE2a" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/mpuittinen/helsinki-serverless-meetup-1562016-aws-services" title="Helsinki Serverless Meetup 15.6.2016 : AWS Services" target="_blank">Helsinki Serverless Meetup 15.6.2016 : AWS Services</a><br/> </strong> from <strong><a href="//www.slideshare.net/mpuittinen" target="_blank">Mikael Puittinen</a></strong> </div></div>
+          <div class="presentation"><iframe src="//www.slideshare.net/slideshow/embed_code/key/sGQzh9DuZ5CceO" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/jerryjalava/serverless-with-firebase" title="Serverless with Firebase" target="_blank">Serverless with Firebase</a> <br/> </strong> from <strong><a href="//www.slideshare.net/jerryjalava" target="_blank">Jerry Jalava</a></strong> </div></div>
+          <div class="presentation"><iframe src="https://onedrive.live.com/embed?cid=AE10FA5F8F94DC52&resid=AE10FA5F8F94DC52%217818&authkey=AM3aBoefEcCKDnk&em=2" width="476" height="288" frameborder="0" scrolling="no"></iframe></div>
+        </div>
+        <a id="presentation-toggle" class="presentation-toggle" href="javascript:void(0)">View all presentations</a>
+      </div>
+    </section>
+    <section id="technologies" class="technologies">
+      <div class="container">
+        <div class="section-heading"><h2>Technologies</h2></div>
+        <div class="text-content">
+          Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
+          Developers embracing the serverless paradigm leveraging existing PaaS / SaaS solutions for building
+          new digital services. By leveraging PaaS / SaaS, the developer does not need to take servers into
+          account and can focus his/her efforts on actual service logic. Serverless.fi organizes events for
+          exchanging experiences and spreading this knowledge.
+        </div>
+      </div>
+    </section>
+    <section id="resources" class="resources">
+      <div class="container">
+        <div class="section-heading"><h2>Resources</h2></div>
+        <div class="flex-container">
+          <div class="resource-box">
+            <div class="subsection-heading"><h3>Lorem material</h3></div>
+            <a href="#">Link to some material</a> <br/>
+            <a href="#">Link to some material</a>
+          </div>
+          <div class="resource-box">
+            <div class="subsection-heading"><h3>Lirum material</h3></div>
+            <a href="#">Link to some material</a> <br/>
+            <a href="#">Link to some material</a>
+          </div>
+          <div class="resource-box">
+            <div class="subsection-heading"><h3>Larum material</h3></div>
+            <a href="#">Link to some material</a> <br/>
+            <a href="#">Link to some material</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
