@@ -30,4 +30,4 @@ getWeather: data => new Promise((resolve, reject) => {
       })
       .catch(reject);
   }
-}
+})
