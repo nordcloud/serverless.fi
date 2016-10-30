@@ -37,7 +37,7 @@ function setEventData(data) {
     $('.event').append($template);
   });
 
-  if (events.length == 0 || !events) {
+  if (!events || events.length === 0) {
     setNoUpcomingEvents();
   }
 }
