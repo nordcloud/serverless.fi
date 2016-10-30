@@ -151,6 +151,31 @@ a:hover {
   margin-bottom: 2.5rem;
 }
 
+.single-event {
+  border-bottom: 1px solid #979797;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.event .single-event:nth-child(2) {
+  padding-top: 0;
+}
+
+.event .single-event:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.next-event {
+  padding-bottom: 1rem;
+}
+
+.slash-logo {
+  width: 30px;
+  height: 30px;
+  vertical-align: bottom;
+}
+
 .slack-invite {
   margin-bottom: 2.5rem;
 }

@@ -4,8 +4,9 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Muli|Nunito" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="scripts/vendor/jquery-3.1.1.min.js"></script>
+    <script src="scripts/vendor/moment.min.js"></script>
+    <script src="scripts/scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Serverless.fi</title>
   </head>
@@ -37,23 +38,16 @@
         </div>
         <div class="flex-container">
           <div class="event">
-            <div class="subsection-heading"><h3>Next event</h3></div>
-            <div id="next-event">
-              <span id="date"></span><span id="time"></span> <br/>
-              <a id="event-url" href="" ><span id="event-title" class="event-title"></span></a> <br/>
-              <span id="location"></span> <br/>
-              <span id="participants"></span>
-            </div>
+            <div class="subsection-heading"><h3>Upcoming Events</h3></div>
           </div>
           <div class="some">
             <div class="subsection-heading"><h3>Find us in</h3></div>
-            <a href=""><img src="images/meetup.jpeg"/></a>
-            <a href=""><img src="images/twitter.svg"/></a>
-            <a href=""><img src="images/slack.png"/></a>
+            <a href="http://www.meetup.com/Helsinki-Serverless/"><img src="images/meetup.jpeg"/></a>
+            <a href="https://twitter.com/serverlessfi"><img src="images/twitter.svg"/></a>
           </div>
         </div>
         <div class="flex-container">
-          <div class="subsection-heading"><h3>Join our Slack!</h3></div>
+          <div class="subsection-heading"><h3>Join our Slack! <img class="slash-logo" src="images/slack.png"/> </h3></div>
           <div class="slack-invite">
             <p>Your email for receiving the invite: <input id="slack-invite-email" type="email" size="30"/> <button id="slack-invite-button">Send the invite!</button></p>
             <p id="slack-invite-return-message"></p>

@@ -12,28 +12,32 @@ function smoothScroll() {
 }
 
 function setEventData(data) {
-  var events = data.data;
-  if (events.length != 0 && events[0]) {
-    if (events[0].time) {
-      var date = new Date(events[0].time);
-      $('#date').text(date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear());
-      $('#time').text(' at ' + date.getHours() + ':' + date.getMinutes());
+  var events = data.data || [];
+  var eventTemplate = '<div class="single-event"><span class="date"></span><span class="time"></span> <br/><a class="event-url" href="" ><span class="event-title"></span></a> <br/> <span class="location"></span> <br/><span class="participants"></span></div>';
+  events.forEach(function(event) {
+    var $template = $(eventTemplate);
+    if (event.time) {
+      $template.find('.date').text(moment(event.time).format('DD.MM.YYYY'));
+      $template.find('.time').text(' at ' + moment(event.time).format('HH:mm'));
     }
-    if (events[0].name) {
-      $('#event-title').text(events[0].name);
+    if (event.name) {
+      $template.find('.event-title').text(event.name);
     }
-    if (events[0].link) {
-      $('#event-url').attr('href', events[0].link);
+    if (event.link) {
+      $template.find('.event-url').attr('href', event.link);
     }
-    if (events[0].venue) {
-      if (events[0].venue.name) {
-        $('#location').text('Location: ' + events[0].venue.name);
+    if (event.venue) {
+      if (event.venue.name) {
+        $template.find('.location').text('Location: ' + event.venue.name);
       }
     }
-    if (events[0].rsvp_limit && events[0].yes_rsvp_count) {
-      $('#participants').text(events[0].yes_rsvp_count + '/' + events[0].rsvp_limit + ' participants');
+    if (event.rsvp_limit && event.yes_rsvp_count) {
+      $template.find('.participants').text(event.yes_rsvp_count + '/' + event.rsvp_limit + ' participants');
     }
-  } else {
+    $('.event').append($template);
+  });
+
+  if (events.length == 0 || !events) {
     setNoUpcomingEvents();
   }
 }
