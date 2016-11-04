@@ -1,0 +1,21 @@
+body {
+  font-size: 14px;
+  font-family: Helmet, Freesans, sans-serif;
+  padding: 1rem;
+  font-color: #333333;
+}
+
+.file {
+  font-weight: bold;
+}
+
+.navi {
+  font-weight: bold;
+}
+
+.code {
+  padding: 0 4px;
+  border: 1px solid #DEDEDE;
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  background-color: #EFEFEF;
+}
