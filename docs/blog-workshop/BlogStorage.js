@@ -2,7 +2,7 @@
 
 class BlogStorage {
 
-  constructor(dynamodb, stage, serviceName) {
+  constructor(dynamodb, serviceName, stage) {
     this.dynamodb = dynamodb;
     this.baseParams = {
       TableName: `${serviceName}-blog-${stage}`,
@@ -11,7 +11,7 @@ class BlogStorage {
 
   // Get all posts
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#scan-property
-  getPosts(query, cb) {
+  getPosts(query, cb) { 
     const params = Object.assign({}, this.baseParams, {
       AttributesToGet: [
         'id',
@@ -27,30 +27,31 @@ class BlogStorage {
   // Add new post
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
   savePost(post, cb) {
-    post.id = Date.now().toString();
+    const newPost = post;
+    newPost.id = Date.now().toString();
 
-    const params = Object.assign({}, this.baseParams, { Item: post });
-
-    this.dynamodb.put(params, (error, response) => {
-      if (!error) {
-        return cb(null, { post });
+    const params = Object.assign({}, this.baseParams, { Item: newPost });
+    this.dynamodb.put(params, (error) => {
+      if (error) {
+        return cb(error);
       }
-      return cb(error, response);
+      return cb(null, { post });
     });
   }
 
   // Edit post
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
   updatePost(id, post, cb) {
-    post.id = id;
+    const updatedPost = post;
+    updatedPost.id = id;
 
-    const params = Object.assign({}, this.baseParams, { Item: post });
+    const params = Object.assign({}, this.baseParams, { Item: updatedPost });
 
-    this.dynamodb.put(params, (error, response) => {
-      if (!error) {
-        return cb(null, { post });
+    this.dynamodb.put(params, (error) => {
+      if (error) {
+        return cb(error);
       }
-      return cb(error, response);
+      return cb(null, { post });
     });
   }
 
@@ -62,10 +63,10 @@ class BlogStorage {
     );
 
     this.dynamodb.delete(params, (error, response) => {
-      if (!error) {
-        return cb(null, { post: id });
+      if (error) {
+        return cb(error);
       }
-      return cb(error, response);
+      return cb(null, response);
     });
   }
 }

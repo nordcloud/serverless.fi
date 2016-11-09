@@ -1,4 +1,4 @@
- # DynamoDB Blog table for workshop
+# DynamoDB Blog table for workshop
     BlogTable:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Retain      
