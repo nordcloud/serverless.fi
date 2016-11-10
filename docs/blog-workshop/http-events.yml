@@ -1,0 +1,22 @@
+ # Insert under handler for the posts function
+    events:
+      - http:
+          path: posts
+          method: get
+          cors: true
+          integration: lambda
+      - http:
+          path: posts
+          method: post
+          cors: true
+          integration: lambda
+      - http:
+          path: posts/{id}
+          method: put
+          cors: true
+          integration: lambda
+      - http:
+          path: posts/{id}
+          method: delete
+          cors: true         
+          integration: lambda
