@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const IAM = new AWS.IAM();
-IAM.getUser(function(err, data) {
+IAM.getUser(function(error, data) {
   if (error) {
     console.log(error);
   } else {
