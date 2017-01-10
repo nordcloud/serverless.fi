@@ -1,17 +1,16 @@
 'use strict';
 
 class BlogStorage {
-
-  constructor(dynamodb, serviceName, stage) {
+  constructor(dynamodb) {
     this.dynamodb = dynamodb;
     this.baseParams = {
-      TableName: `${serviceName}-blog-${stage}`,
+      TableName: process.env.TABLE_NAME,
     };
   }
 
   // Get all posts
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#scan-property
-  getPosts(query, cb) { 
+  getPosts() {
     const params = Object.assign({}, this.baseParams, {
       AttributesToGet: [
         'id',
@@ -21,53 +20,38 @@ class BlogStorage {
       ],
     });
 
-    this.dynamodb.scan(params, (error, response) => cb(error, response));
+    return this.dynamodb.scan(params).promise();
   }
 
   // Add new post
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
-  savePost(post, cb) {
-    const newPost = post;
-    newPost.id = Date.now().toString();
-
-    const params = Object.assign({}, this.baseParams, { Item: newPost });
-    this.dynamodb.put(params, (error) => {
-      if (error) {
-        return cb(error);
-      }
-      return cb(null, { post });
-    });
+  savePost(post) {
+    const date = Date.now();
+    const id = date.toString();
+    const payload = Object.assign({}, post, { id, date });
+    const params = Object.assign({}, this.baseParams, { Item: payload });
+    return this.dynamodb.put(params).promise()
+      .then(() => ({ post: payload }));
   }
 
   // Edit post
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
-  updatePost(id, post, cb) {
-    const updatedPost = post;
-    updatedPost.id = id;
+  updatePost(id, post) {
+    const payload = Object.assign({}, post, { id });
+    const params = Object.assign({}, this.baseParams, { Item: payload });
 
-    const params = Object.assign({}, this.baseParams, { Item: updatedPost });
-
-    this.dynamodb.put(params, (error) => {
-      if (error) {
-        return cb(error);
-      }
-      return cb(null, { post });
-    });
+    return this.dynamodb.put(params).promise()
+      .then(() => ({ post: payload }));
   }
 
   // Delete post
   // @see: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#delete-property
-  deletePost(id, cb) {
+  deletePost(id) {
     const params = Object.assign({}, this.baseParams,
       { Key: { id } }
     );
 
-    this.dynamodb.delete(params, (error, response) => {
-      if (error) {
-        return cb(error);
-      }
-      return cb(null, response);
-    });
+    return this.dynamodb.delete(params).promise();
   }
 }
 
