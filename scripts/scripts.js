@@ -64,7 +64,7 @@ function hide() {
 // SLACK INVITER:
 
 var settings = {
-  executeApiDomain: 'bd36x7kp31.execute-api.eu-west-1.amazonaws.com',
+  executeApiDomain: '4hcl6jbod2.execute-api.eu-west-1.amazonaws.com',
   submitButtonSelector: '#slack-invite-button',
   emailInputSelector: '#slack-invite-email',
   returnMessageContainerSelector: '#slack-invite-return-message'
@@ -122,14 +122,13 @@ $(function () {
 
     $.ajax({
       type: 'POST',
-      url: 'https://' + settings.executeApiDomain + '/production/invite',
+      url: 'https://' + settings.executeApiDomain + '/dev/invite',
       contentType: 'application/json',
       dataType: 'json',
       data: JSON.stringify({email: emailValue}),
     })
       .done(function (data) {
         try {
-          data = JSON.parse(data);
           if (data.ok) {
             handleSuccess('Great success');
           } else {
