@@ -221,6 +221,17 @@ a:hover {
   }
 }
 
+#logo {
+  height: 120px;
+  margin-top: -50px;
+  margin-bottom: 3rem;
+}
+
+#logo path, #logo line {
+  fill: white;
+  stroke: white;
+}
+
 @media (max-width: 500px) {
   nav {
     display: none;
