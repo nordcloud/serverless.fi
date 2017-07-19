@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AWS Workshop preps</title>
+  <title>Workshop Preparations</title>
   <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h1>AWS Workshop preps</h1>
+<h1>Preparations before attending to AWS Serverless Workshop</h1>
 <h2>Prerequisites</h2>
 <ul>
-  <li>A laptop with Node 4 (4.3.2 recommended) installed</li>
+  <li>A laptop with Node 6 (6.10.1 recommended) installed</li>
   <li>An AWS account (<a href="https://aws.amazon.com/free">https://aws.amazon.com/free</a>)</li>
-  <li>AWS CLI [optional]
+  <li>AWS CLI [recommended]
     (<a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">http://docs.aws.amazon.com/cli/latest/userguide/installing.html</a>
     OR
     <span class="code">brew install awscli</span> for OSX homebrew users)
   </li>
-  <li>Git client [optional] (<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>)
+  <li>Git client [recommended] (<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>)
   </li>
 </ul>
 
@@ -28,9 +28,16 @@
   <li>Click on the new user and select the <span class="navi">Permissions</span> tab</li>
   <li>Attach the <span class="navi">Administrator access</span> policy to the user</li>
 </ul>
-Note: In real life scenarios, you would not assign administrator privileges but more fine grain permissions.
+Note: In real life scenarios, you would not assign administrator privileges but more fine-grained permissions.
 
 <h2>Setting AWS Access on laptop</h2>
+<p>If you have installed the AWS CLI, the <span class="code">aws configure</span> command is the fastest way to set up your AWS credentials. (<a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html</a>)</p>
+<p class="code">$ <b>aws configure</b><br>
+ AWS Access Key ID [None]: <b>ExampleAccessKeyId</b><br>
+ AWS Secret Access Key [None]: <b>ExampleSecretAccessKey</b><br>
+ Default region name [None]: <b>us-east-1</b><br>
+ Default output format [None]: <b>json</b></p>
+<p>Alternatively, you can add the credentials to your system manually:</p>
 <ul>
   <li>Create directory <span class="file">.aws</span> to your home folder</li>
   <li>Copy file <a href="config">config</a> to your <span class="file">.aws</span> folder</li>
@@ -49,9 +56,9 @@ You should get your IAM account name as a response if set up correctly.
 
 <h2>Install Serverless Framework</h2>
 <ul>
-  <li>Run <span class="code">npm install -g serverless@1.5.0</span></li>
+  <li>Run <span class="code">npm install -g serverless@1.16.0</span></li>
+  <li>Run <span class="code">sls --version</span> to verify installation</li>
 </ul>
 
-Create workshop projects under the workshop directory to use the installed Serverless version.
 </body>
 </html>
