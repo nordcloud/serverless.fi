@@ -19,3 +19,12 @@ body {
   font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
   background-color: #EFEFEF;
 }
+
+p.code, div.code {
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+ul {
+  padding-left: 20px;
+}
